@@ -16,52 +16,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="3eK-jF-8Q9">
-                                <rect key="frame" x="15" y="118" width="363" height="685"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBt-mr-txf">
+                                <rect key="frame" x="9" y="112" width="375" height="731"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTz-Og-u7g" customClass="DropDownView" customModule="MazaadyTaskMahmoudZaki" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="363" height="55"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="Qgf-bl-JjT"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lw-M9-qpL" customClass="DropDownView" customModule="MazaadyTaskMahmoudZaki" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="62" width="363" height="55"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="Vsc-xi-ENm"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7r-ix-hhz">
-                                        <rect key="frame" x="0.0" y="124" width="363" height="515.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-rA-hR0">
-                                        <rect key="frame" x="0.0" y="646.66666666666663" width="363" height="38.333333333333371"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Submit"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="3eK-jF-8Q9">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="263.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oBF-Qb-pq1">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="125"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTz-Og-u7g" customClass="DropDownView" customModule="MazaadyTaskMahmoudZaki" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="750" constant="55" id="Qgf-bl-JjT"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lw-M9-qpL" customClass="DropDownView" customModule="MazaadyTaskMahmoudZaki" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="335" height="55"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="750" constant="55" id="Vsc-xi-ENm"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-rg-hfr">
+                                                        <rect key="frame" x="0.0" y="125" width="335" height="0.0"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-rA-hR0">
+                                                <rect key="frame" x="0.0" y="225" width="335" height="38.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitClikced:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZw-hR-e3R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="3eK-jF-8Q9" firstAttribute="leading" secondItem="rBt-mr-txf" secondAttribute="leading" constant="20" symbolic="YES" id="1A7-kh-t8y"/>
+                                    <constraint firstAttribute="bottom" secondItem="3eK-jF-8Q9" secondAttribute="bottom" id="1ZE-nc-RFY"/>
+                                    <constraint firstItem="3eK-jF-8Q9" firstAttribute="centerX" secondItem="rBt-mr-txf" secondAttribute="centerX" id="NKz-wM-8aB"/>
+                                    <constraint firstAttribute="trailing" secondItem="3eK-jF-8Q9" secondAttribute="trailing" constant="20" symbolic="YES" id="TDj-vc-EFK"/>
+                                    <constraint firstItem="3eK-jF-8Q9" firstAttribute="top" secondItem="rBt-mr-txf" secondAttribute="top" id="Y0f-Ld-gE5"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gFI-RF-eYI"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mHE-6z-Vnv"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3eK-jF-8Q9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="3i8-aZ-ddy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3eK-jF-8Q9" secondAttribute="trailing" constant="15" id="6Er-Uo-NRR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3eK-jF-8Q9" secondAttribute="bottom" constant="15" id="lHU-IO-W6l"/>
-                            <constraint firstItem="3eK-jF-8Q9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="yIw-k0-cU5"/>
+                            <constraint firstItem="rBt-mr-txf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="9" id="KSI-ox-loV"/>
+                            <constraint firstItem="rBt-mr-txf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="LaM-rr-et3"/>
+                            <constraint firstAttribute="trailing" secondItem="rBt-mr-txf" secondAttribute="trailing" constant="9" id="dB2-47-YtI"/>
+                            <constraint firstAttribute="bottom" secondItem="rBt-mr-txf" secondAttribute="bottom" constant="9" id="qO3-bT-kPc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task" id="rqD-j8-qv0"/>
                     <connections>
                         <outlet property="ddMainCategory" destination="NTz-Og-u7g" id="iMZ-7Z-mtf"/>
+                        <outlet property="ddSubCategory" destination="0Lw-M9-qpL" id="R6G-ij-KFr"/>
+                        <outlet property="vuStackProperties" destination="dgx-rg-hfr" id="VNB-sh-Pr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860.30534351145036" y="3.5211267605633805"/>
+        </scene>
+        <!--Display Screen-->
+        <scene sceneID="RVY-Vr-C4b">
+            <objects>
+                <viewController storyboardIdentifier="DisplayScreen" id="oYl-pM-Nrb" customClass="DisplayScreen" customModule="MazaadyTaskMahmoudZaki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WTn-5O-LMU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FkE-jg-uIn">
+                                <rect key="frame" x="176" y="416" width="41.333333333333343" height="20.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD3-RX-i7J">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O9P-D3-0ya"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FkE-jg-uIn" firstAttribute="centerX" secondItem="WTn-5O-LMU" secondAttribute="centerX" id="OJc-mZ-AB1"/>
+                            <constraint firstItem="FkE-jg-uIn" firstAttribute="centerY" secondItem="WTn-5O-LMU" secondAttribute="centerY" id="VtS-aI-mxb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblDesc" destination="dD3-RX-i7J" id="xm4-5q-SKz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kbv-qr-jbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cfh-U1-TGx">

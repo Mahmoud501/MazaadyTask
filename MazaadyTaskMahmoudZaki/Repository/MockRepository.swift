@@ -15,7 +15,7 @@ enum FactorError: Error {
 class MockRepository: AppRepository {
     
     func getCategories() async -> Result<[MainCategoryModel]?, FactorError> {
-        try? await Task.sleep(nanoseconds: 10000)
+        try? await Task.sleep(nanoseconds: 1000000000)
         let cat1 = MainCategoryModel()
         cat1.id = 1
         cat1.name = "category1"
@@ -29,7 +29,7 @@ class MockRepository: AppRepository {
     }
     
     func getSubCategories(catId: Int) async -> Result<[SubCategoryModel]?, FactorError> {
-        try? await Task.sleep(nanoseconds: 10000)
+        try? await Task.sleep(nanoseconds: 1000000000)
         let sub1 = SubCategoryModel()
         sub1.id = 1
         sub1.name = "sub1"
@@ -46,7 +46,7 @@ class MockRepository: AppRepository {
     }
     
     func getProperties(subCatId: Int) async -> Result<[PropertyModel]?, FactorError> {
-        try? await Task.sleep(nanoseconds: 10000)
+        try? await Task.sleep(nanoseconds: 1000000000)
         let pro1 = PropertyModel()
         pro1.id = 1
         pro1.name = "color"
@@ -57,7 +57,7 @@ class MockRepository: AppRepository {
     }
     
     func getPropertiesValues(proId: Int, parentValueId: Int?) async -> Result<[PropertyValueModel]?, FactorError> {
-        try? await Task.sleep(nanoseconds: 10000)
+        try? await Task.sleep(nanoseconds: 1000000000)
         let value1 = PropertyValueModel()
         value1.id = Int.random(in: 10000...1000000000)
         value1.value = "value" + "_" + value1.id.description
@@ -65,8 +65,7 @@ class MockRepository: AppRepository {
         value2.id = Int.random(in: 10000...1000000000)
         value2.value = "value" + "_" + value2.id.description
         let value3 = PropertyValueModel()
-        value3.id = 0
-        value3.value = "Other"
+        value3.id = 0        
         return .success([value1 , value2, value3])
     }
     

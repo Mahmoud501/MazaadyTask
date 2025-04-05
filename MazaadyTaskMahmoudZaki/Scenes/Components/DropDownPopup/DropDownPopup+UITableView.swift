@@ -21,7 +21,7 @@ extension DropDownPopup: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelect?(indexPath.row)
+        didSelect?(filteredData[indexPath.row].id ?? 0)
         tableView.deselectRow(at: indexPath, animated: true)
         close()
     }

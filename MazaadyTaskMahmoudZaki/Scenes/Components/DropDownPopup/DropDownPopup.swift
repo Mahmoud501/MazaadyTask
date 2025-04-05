@@ -32,6 +32,10 @@ class DropDownPopup: UIViewController, UIScrollViewDelegate, UIGestureRecognizer
     @IBOutlet weak var tableView: UITableView!
     
     
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         vuDrag.layer.cornerRadius = 10

@@ -9,17 +9,7 @@ import Foundation
 
 class UserModel {
     var id: Int = 0
-    var name: String = ""
-    var form: FormModel?
-    
-    func submitForm() -> Bool {
-        return form?.valid() ?? false
-    }
-    
-    func seeResult() -> FormModel? {
-        form?.display()
-        return form
-    }
+    var name: String = ""   
 }
 
 //Repo mock

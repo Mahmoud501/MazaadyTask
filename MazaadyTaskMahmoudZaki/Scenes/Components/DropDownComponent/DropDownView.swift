@@ -9,7 +9,15 @@ import Foundation
 import UIKit
 
 class DropDownView: UIView {
+        
     var didClicked: (()->())?
+    var didChangeCustomValue: ((String)->())?
+    
+    var placeHolder: String = "" {
+        didSet {
+            lblValue.text = placeHolder
+        }
+    }
     
     var value: String = "" {
         didSet {
@@ -17,11 +25,39 @@ class DropDownView: UIView {
         }
     }
     
+    var isLoading: Bool = false {
+        didSet {
+            isLoading == true ? activity.startAnimating() : activity.stopAnimating()
+        }
+    }
+    
+    var errorText: String? {
+        didSet {
+            if (errorText ?? "") == "" {
+                lblError.text = ""
+                lblError.isHidden = true
+            }else {
+                lblError.text = errorText
+                lblError.isHidden = false
+            }
+        }
+    }
+    
+    @IBOutlet weak var txtCustomValue: UITextField!
+    @IBOutlet weak var lblError: UILabel!
     @IBOutlet weak var lblValue: UILabel!
     @IBOutlet var contentView: UIView!
-        
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
+    @IBAction func valueDidChange(_ sender: Any) {
+        didChangeCustomValue?(txtCustomValue.text ?? "")
+    }
+    
+    
     @IBAction func clicked(_ sender: Any) {
-        didClicked?()
+        if isLoading == false {
+            didClicked?()
+        }
     }
     
     override init(frame: CGRect) {
@@ -40,6 +76,9 @@ class DropDownView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask  = [.flexibleHeight,.flexibleWidth]
+        lblError.text = ""
+        lblError.isHidden = true
+        txtCustomValue.isHidden = true
     }
 
 }
